@@ -17,6 +17,7 @@ def fetch_urls(queue, num):
         url = queue.get()
         print("【" + url + "】")
         html = s.get(url, headers = headers).text
+        print(html)
         pq = PyQuery(html)
         #print(pq)
         size = (pq.find('tbody tr').size())
